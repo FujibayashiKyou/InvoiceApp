@@ -1,0 +1,32 @@
+h1 {
+  font-size: 32px;
+  width: 95%;
+}
+
+#add-customer-container{
+  width: 100%;
+  display: -webkit-inline-box;
+  padding: 15px;
+}
+
+#add-customer-button {
+  border: 0px solid black;
+  background: whitesmoke;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+#add-customer-button:focus { outline: 0; }
+
+#add-customer-ico {
+  font-size: 34px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

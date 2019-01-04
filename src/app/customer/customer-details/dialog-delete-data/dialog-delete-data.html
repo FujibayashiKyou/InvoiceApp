@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>
+  <strong> Warning!  </strong>
+  <span id='warning-icon' class="material-icons"> notification_important </span>
+</h1>
+
+<div id='content' mat-dialog-content>
+  <p id="warning-text"> You want to delete
+    <strong> {{data.name}} </strong>
+    from database. Are you sure?
+  </p>
+
+  <!-- BUTTON SECTION -->
+  <div id="btn-container">
+    <button id='no-button' mat-button class="btn btn-primary" (click)="onNoClick()">No Thanks</button>
+    <button id='yes-button' mat-button class="btn btn-danger" [mat-dialog-close]="data" (click)='onYesClick()' cdkFocusInitial>Yes, delete it</button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+h1 {
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+}
+
+#warning-icon {
+  position:inherit;
+  bottom:0;
+  right:0;
+  vertical-align: bottom;
+  font-size: 36px;
+  color: crimson;
+}
+
+#old-customer-name, #old-customer-telephone, #old-customer-address {
+  font-size: 18px;
+}
+
+#forward-icon {
+  font-size: 18px;
+}
+
+#new-customer-name, #new-customer-telephone, #new-customer-address {
+  font-size: 18px;
+}

@@ -1,0 +1,26 @@
+h1 {
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+}
+
+#warning-icon {
+  position:inherit;
+  bottom:0;
+  right:0;
+  vertical-align: bottom;
+  font-size: 36px;
+  color: crimson;
+}
+
+#warning-text{
+  font-size: 14px;
+}
+
+#no-button {
+  margin: 15px 15px 5px 5px;
+}
+
+#yes-button {
+  margin: 15px 5px 5px 0;
+}

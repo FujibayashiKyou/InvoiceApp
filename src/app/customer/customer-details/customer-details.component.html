@@ -1,0 +1,42 @@
+<div id='customer-details' *ngIf='customer'>
+  <h2> Edit customer #{{customer.id}} </h2><br>
+
+  <!-- FORM BEGIN -->
+  <form  class="details-form">
+    <mat-form-field class="details-full-width">
+      <input matInput placeholder="Company (disabled)" disabled value="InvoiceApp">
+    </mat-form-field>
+
+    <!-- NAME SECTION -->
+    <table class="details-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="details-full-width">
+        <input matInput placeholder=" Name " [(ngModel)]="customer.name" name='name' [value] = customer.name>
+      </mat-form-field></td>
+    </tr></table>
+
+    <!-- ADDRESS & PHONE SECTION -->
+    <p>
+      <mat-form-field class="details-full-width">
+        <span matPrefix> +38 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone" [(ngModel)]="customer.phone" name='telephone' [value] = customer.phone>
+        <mat-icon matSuffix> mode_edit </mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="details-full-width">
+        <input matInput #message maxlength="256" placeholder="Address" [(ngModel)]="customer.address" name='address' [value] = customer.address>
+        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <table class="details-full-width" cellspacing="0"><tr>
+      <button id='back-button' type="button" class="btn btn-primary" (click)='onBack()' > Back </button>
+      <button id='save-button' type="button" class="btn btn-success" (click)="onSave(customer)" > Save </button>
+      <button id='delete-button' type="button" class="btn btn-danger" (click)="onDelete(customer)" > Delete </button>
+    </tr></table>
+  </form>
+</div>
+
+<p *ngIf='!customer'>
+  Oops, sorry, we haven`t this customer in our database...
+</p>

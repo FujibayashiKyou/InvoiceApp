@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>
+  <strong> Warning!  </strong>
+  <span id='warning-icon' class="material-icons"> notification_important </span>
+</h1>
+
+
+<div mat-dialog-content>
+  <p> Following changes will be apply after your confirm.  </p>
+
+  <!-- GRID LIST SECTION -->
+  <mat-grid-list cols="3" rowHeight="100px">
+
+    <!-- NAME SECTION -->
+    <ng-container *ngIf='data.oldCustomer.name !== data.newCustomer.name'>
+      <mat-grid-tile id='old-customer-name' [colspan]='1' [rowspan]='1' style='color: crimson'> {{data.oldCustomer.name}} </mat-grid-tile>
+      <mat-grid-tile id='forward-icon' [colspan]='1' [rowspan]='1' style='color: green'> <span class="material-icons"> forward </span> </mat-grid-tile>
+      <mat-grid-tile id= 'new-customer-name' [colspan]='1' [rowspan]='1' style='color: black'> {{data.newCustomer.name}} </mat-grid-tile>
+    </ng-container>
+
+    <!--TELEPHONE SECTION -->
+    <ng-container *ngIf='data.oldCustomer.phone !== data.newCustomer.phone'>
+      <mat-grid-tile id='old-customer-telephone' [colspan]='1' [rowspan]='1' style='color: crimson'> {{data.oldCustomer.phone}} </mat-grid-tile>
+      <mat-grid-tile id='forward-icon' [colspan]='1' [rowspan]='1' style='color: green'> <span class="material-icons"> forward </span> </mat-grid-tile>
+      <mat-grid-tile id= 'new-customer-telephone' [colspan]='1' [rowspan]='1' style='color: black'> {{data.newCustomer.phone}} </mat-grid-tile>
+    </ng-container>
+
+    <!-- ADDRESS SECTION -->
+    <ng-container *ngIf='data.oldCustomer.address !== data.newCustomer.address'>
+      <mat-grid-tile id='old-customer-address' [colspan]='1' [rowspan]='1' style='color: crimson'> {{data.oldCustomer.address}} </mat-grid-tile>
+      <mat-grid-tile id='forward-icon' [colspan]='1' [rowspan]='1' style='color: green'> <span class="material-icons"> forward </span> </mat-grid-tile>
+      <mat-grid-tile id= 'new-customer-address' [colspan]='1' [rowspan]='1' style='color: black'> {{data.newCustomer.address}} </mat-grid-tile>
+    </ng-container>
+
+  </mat-grid-list>
+
+  <!-- BUTTON SECTION -->
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.newCustomer" cdkFocusInitial>Ok</button>
+
+</div>

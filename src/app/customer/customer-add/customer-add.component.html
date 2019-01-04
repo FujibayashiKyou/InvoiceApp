@@ -1,0 +1,44 @@
+<h1> Add new cusomer: </h1>
+
+<div>
+  <!-- FORM BEGIN -->
+  <form class="add-customer-form">
+    <mat-form-field class="add-full-width">
+      <input matInput placeholder="Company (disabled)" disabled value="InvoiceApp">
+    </mat-form-field>
+
+    <!-- NAME SECTION -->
+    <table class="add-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="add-full-width">
+            <input matInput placeholder=" Name " [(ngModel)]="newCustomer.name" name='name' [value]=newCustomer.name>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ADDRESS & PHONE SECTION -->
+    <p>
+      <mat-form-field class="add-full-width">
+        <span matPrefix> +38 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone" [(ngModel)]="newCustomer.phone" name='telephone' [value]=newCustomer.phone>
+        <mat-icon matSuffix> mode_edit </mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="add-full-width">
+        <input matInput #message maxlength="256" placeholder="Address" [(ngModel)]="newCustomer.address" name='address'
+          [value]=newCustomer.address>
+        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <table class="add-full-width" cellspacing="0">
+      <tr>
+        <button id='back-button' type="button" class="btn btn-primary" (click)='onBack()'> Back </button>
+        <button id='save-button' type="button" class="btn btn-success" (click)="onSave(newCustomer)"> Save </button>
+      </tr>
+    </table>
+  </form>
+</div>
